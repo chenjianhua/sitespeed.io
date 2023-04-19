@@ -1,14 +1,14 @@
-h2.url #{h.plural(noPages,'page')} analysed for #{options.name ? options.name : h.short(context.name, 30)}
+h4.url #{options.name ? options.name : h.short(context.name, 30)} 的 #{h.plural(noPages,'个页面')}分析  
 
 if usingBrowsertime
 
-  p.small Tested #{timestamp} using #{h.cap(browserName || options.browsertime.browser)} #{browserVersion}
+  p.small 使用 #{h.cap(browserName || options.browsertime.browser)} #{browserVersion} 内核 测试于 #{timestamp}  
     if options.multi && options.html.showScript
         | (
         a(href= rootPath + 'scripts.html')= 'script'
         | ).
         | .
-    a(href= rootPath + 'settings.html')= '(runtime settings).'
+    a(href= rootPath + 'settings.html')= '(运行时参数).'
   
   if options.browsertime.browser === 'safari'
         p At the moment we get limited metrics from Safari. Transfer sizes and number of requests are missing.
